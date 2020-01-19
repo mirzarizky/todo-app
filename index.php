@@ -28,10 +28,11 @@
                 $name = $_POST['name'];
                 $email = $_POST['email'];
                 $job = $_POST['job'];
+                $date = date('Y-m-d');
 
                 // Insert data
-                $sql_insert = "INSERT INTO users (name, email, job) 
-                            VALUES (?,?,?)";
+                $sql_insert = "INSERT INTO users (name, email, job, created_at) 
+                            VALUES (?,?,?,?)";
                 $stmt = $conn->prepare($sql_insert);
                 $stmt->bindValue(1, $name);
                 $stmt->bindValue(2, $email);
@@ -41,8 +42,6 @@
             } catch(Exception $e) {
                 echo "Failed: " . $e;
             }
-
-            echo "<h3>Your're registered!</h3>";
         }
  ?>
 <body class="bg-light">
@@ -108,7 +107,7 @@
                                                 echo "<td>".$registrant['date']."</td></tr>";
                                             }
                                         } else {
-                                            echo "<h3>No one is currently registered.</h3>";
+                                            echo "<tr><td colspan='5'>No one is currently registered.</td></tr>";
                                         }
                                     } catch(Exception $e) {
                                         echo "Failed: " . $e;
