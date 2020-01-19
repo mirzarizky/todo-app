@@ -30,8 +30,8 @@
                 $job = $_POST['job'];
 
                 // Insert data
-                $sql_insert = "INSERT INTO users (name, email, job, created_at) 
-                            VALUES (?,?,?,(current_timestamp))";
+                $sql_insert = "INSERT INTO users (name, email, job) 
+                            VALUES (?,?,?)";
                 $stmt = $conn->prepare($sql_insert);
                 $stmt->bindValue(1, $name);
                 $stmt->bindValue(2, $email);
