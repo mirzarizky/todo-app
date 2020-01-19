@@ -104,7 +104,7 @@
                                                 echo "<td>".$registrant['name']."</td>";
                                                 echo "<td>".$registrant['email']."</td>";
                                                 echo "<td>".$registrant['job']."</td>";
-                                                echo "<td>".$registrant['date']."</td></tr>";
+                                                echo "<td>".$registrant['created_at']."</td></tr>";
                                             }
                                         } else {
                                             echo "<tr><td colspan='5'>No one is currently registered.</td></tr>";
