@@ -28,7 +28,7 @@
                 $name = $_POST['name'];
                 $email = $_POST['email'];
                 $job = $_POST['job'];
-                $date = date("Y-m-d H:i:s");
+                $date = date("Y-m-d");
                 // Insert data
                 $sql_insert = "INSERT INTO users (name, email, job, created_at) 
                             VALUES (?,?,?,?)";
