@@ -28,10 +28,10 @@
                 $name = $_POST['name'];
                 $email = $_POST['email'];
                 $job = $_POST['job'];
-                $date = date("Y-m-d");
+
                 // Insert data
                 $sql_insert = "INSERT INTO users (name, email, job, created_at) 
-                            VALUES (?,?,?,?)";
+                            VALUES (?,?,?,(current_timestamp))";
                 $stmt = $conn->prepare($sql_insert);
                 $stmt->bindValue(1, $name);
                 $stmt->bindValue(2, $email);
